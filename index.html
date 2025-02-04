@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="DESCRIPTION META TAG" />
+		<meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+		<meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG" />
+		<meta property="og:url" content="URL OF THE WEBSITE" />
+		<meta property="og:image" content="static/image/your_banner_image.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta name="twitter:title" content="TWITTER BANNER TITLE META TAG" />
+		<meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG" />
+		<meta name="twitter:image" content="static/images/your_twitter_banner_image.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Habi</title>
+		<link rel="icon" type="image/jpg" href="static/images/icon.jpg" />
+		<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+		<link rel="stylesheet" href="static/css/bulma.min.css" />
+		<link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
+		<link rel="stylesheet" href="static/css/bulma-slider.min.css" />
+		<link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+		<link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" />
+		<link rel="stylesheet" href="static/css/index.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+		<script defer src="static/js/fontawesome.all.min.js"></script>
+		<script src="static/js/bulma-carousel.min.js"></script>
+		<script src="static/js/bulma-slider.min.js"></script>
+		<script src="static/js/index.js"></script>
+	</head>
+
+	<body>
+		<section class="hero">
+			<div class="hero-body">
+				<div class="container is-max-desktop">
+					<div class="columns is-centered">
+						<div class="column has-text-centered">
+							<h1 class="title is-1 publication-title">Habitizing Diffusion Planning for Efficient and Effective Decision Making</h1>
+							<div class="is-size-5 publication-authors">
+								<span class="author-block">
+									<a href="" target="_blank">Anonymous Authors</a>
+								</span>
+							</div>
+							<div class="column has-text-centered">
+								<div class="publication-links">
+									<span class="link-block">
+										<a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+											<span class="icon"><i class="fas fa-file-pdf"></i></span>
+											<span>Paper</span>
+										</a>
+									</span>
+									<span class="link-block">
+										<a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+											<span class="icon"><i class="fas fa-file-pdf"></i></span>
+											<span>Supplementary</span>
+										</a>
+									</span>
+									<span class="link-block">
+										<a
+											href="https://github.com/BayesBrain/Habi"
+											target="_blank"
+											class="external-link button is-normal is-rounded is-dark">
+											<span class="icon"><i class="fab fa-github"></i></span>
+											<span>Code</span>
+										</a>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Paper abstract -->
+		<section class="section abstract">
+			<div class="container is-max-desktop">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-four-fifths">
+						<h2 class="title is-3">Abstract</h2>
+						<div class="content has-text-justified">
+							<p>
+								Diffusion models have shown great promise in decision-making, also known as diffusion planning. However, the slow inference speeds limit their potential for broader real-world applications. 
+								Here, we introduce <b>Habi</b>, a general framework that transforms powerful but slow diffusion planning models into fast decision-making models, which mimics the cognitive process in the brain that costly goal-directed behavior gradually transitions to efficient habitual behavior with repetitive practice.   
+								Even using a <b>laptop CPU</b>, the habitized model can achieve an average <b>800+ Hz</b> decision-making frequency (faster than previous diffusion planners by orders of magnitude) on standard offline reinforcement learning benchmarks D4RL, while maintaining comparable or even higher performance compared to its corresponding diffusion planner. Our work proposes a fresh perspective of leveraging powerful diffusion models for real-world decision-making tasks. 
+								We also provide robust evaluations and analysis, offering insights from both biological and engineering perspectives for efficient and effective decision-making.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End paper abstract -->
+
+		<section class="hero teaser">
+			<div class="container is-max-desktop">
+				<div class="hero-body is-centered has-text-centered">
+					<img src="static/images/pvf_cpu_avg.png" alt="" width="60%"/>
+					<h2 class="subtitle has-text-centered">
+						Habitual Inference (HI), a lightweight model generated by our framework <b>Habi</b>, <br> achieves an optimal balance between performance and speed. 
+					</h2>
+				</div>
+			</div>
+		</section>
+
+		<!-- Methods -->
+		<section class="section methods">
+			<div class="container is-max-desktop">
+				<div class="columns">
+					<div class="column">
+						<h2 class="title is-3">Methods</h2>
+						<div class="content has-text-justified">
+							<img src="static/images/framework.png" alt="" />
+							<p>
+								<b>The diagram of Habi.</b> <b>(a) During the Habitization (Training) stage</b>, Habi learns to reconstruct actions from plans generated by a diffusion planner, with the decision spaces of habits (prior) and planning (posterior) aligned via KL divergence in the latent space. Trainable parts include Prior Encoder, Posterior Encoder, Decoder, and Critic. <b>(b) During the Habitual Inference (HI) stage</b>, only the lightweight prior encoder and latent decoder are required, enabling fast, high-quality habitual behaviors for decision-making.
+							</p>
+						</div>
+						<div class="content has-text-justified">
+							<img src="static/images/kl_beta.png" alt="" />
+							<p>
+								<b>Habi is easy-to-use without task-specific parameter tuning.</b> Habi automatically balance reconstruction accuracy and decision space alignment to achieve almost optimal performance across all tasks.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Methods -->
+
+		<!-- Visualization -->
+		<section class="section visualization">
+			<div class="container is-max-desktop">
+				<div class="columns is-multiline">
+					<div class="column is-12">
+						<h2 class="title is-3">Visualization</h2>
+						<p>Action distribution of a diffusion planner, and its corresponding Habitual Inference policy generated by 
+							Habi, across different types of decision-making tasks. The actions are dimension-reduced by Principal Component Analysis (PCA) for better visualization.</p>
+					</div>
+					<!-- Environment 1 -->
+					<div class="column is-6">
+						<h3 class="title is-4">MuJoCo</h3>
+						<video controls muted loop>
+							<source src="static/videos/mujoco.mp4" type="video/mp4" />
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<!-- Environment 2 -->
+					<div class="column is-6">
+						<h3 class="title is-4">Franka Kitchen</h3>
+						<video controls muted loop>
+							<source src="static/videos/kitchen.mp4" type="video/mp4" />
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<!-- Environment 3 -->
+					<div class="column is-6">
+						<h3 class="title is-4">Antmaze</h3>
+						<video controls muted loop>
+							<source src="static/videos/antmaze.mp4" type="video/mp4" />
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					<!-- Environment 4 -->
+					<div class="column is-6">
+						<h3 class="title is-4">Maze2D</h3>
+						<video controls muted loop>
+							<source src="static/videos/maze2d.mp4" type="video/mp4" />
+							Your browser does not support the video tag.
+						</video>
+					</div>
+					We choose typical decision-making tasks 
+				</div>
+			</div>
+		</section>
+		<!-- Methods -->
+
+		<!-- Experiments -->
+		<section class="section experiments">
+			<div class="container is-max-desktop">
+				<div class="columns">
+					<div class="column">
+						<h2 class="title is-3">Experiments</h2>
+						<h3 class="title is-4">Performance vs. Decision Frequency</h3>
+						<div class="content has-text-justified">
+							<img src="static/images/pvf_cpu.png" alt="" />
+							<p>
+								<b>Performance vs. Decision Frequency on a laptop CPU, across different decision-making tasks.</b> Decision frequency (Hz) is measured on a laptop <b>CPU</b> (Apple M2, MacBook).
+							</p>
+						</div>
+						<h3 class="title is-4">Performance Reference</h3>
+						<div class="content has-text-justified">
+							<img src="static/images/performance.png" alt="" />
+							<p>
+								<b>Performance comparison on the D4RL benchmark.</b> The reported values are Mean ± Standard Error over 500 episode seeds for robust testing. Frequencies are measured using a CPU (Apple M2 Max, MacBook laptop).
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Experiments -->
+
+		<footer class="footer">
+			<div class="container">
+				<div class="columns is-centered">
+					<div class="column is-8">
+						<div class="content">
+							<p>
+								This page was built using the
+								<a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">
+									Academic Project Page Template
+								</a>
+								which was adopted from the
+								<a href="https://nerfies.github.io" target="_blank">Nerfies</a>
+								project page. You are free to borrow the of this website, we just ask that you link back to this page in the footer.
+								<br />
+								This website is licensed under a
+								<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+									Creative Commons Attribution-ShareAlike 4.0 International License
+								</a>
+								.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+
+	<script>
+		function toggleMusic(icon) {
+			const player = document.getElementById("musicPlayer");
+			icon.style.transform = "scale(0)"; // Animate to disappear
+
+			setTimeout(() => {
+				if (icon.classList.contains("mdi-music")) {
+					icon.classList.remove("mdi-music");
+					icon.classList.add("mdi-music-off");
+					player.pause();
+				} else {
+					icon.classList.remove("mdi-music-off");
+					icon.classList.add("mdi-music");
+					player.play();
+				}
+				icon.style.transform = "scale(1)"; // Animate to reappear
+			}, 300); // Match the duration of the CSS transition
+		}
+	</script>
+</html>
